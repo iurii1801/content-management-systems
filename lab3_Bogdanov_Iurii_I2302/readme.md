@@ -8,7 +8,7 @@
 
 1. Установить WordPress.
 2. Скопировать папку темы в wp-content/themes.
-3. Активировать тему в разделе Appearance → Themes(Внешний → вид Темы).
+3. Активировать тему в разделе Appearance → Themes(Внешний вид → Темы).
 
 ## Ход работы
 
@@ -587,60 +587,161 @@ style.css
 ```css
 /*
 Theme Name: USM Theme
-Theme URI: http://localhost
 Author: Student
-Description: Простая тема WordPress для лабораторной работы
+Description: Simple WordPress theme for laboratory work
 Version: 1.0
 */
 
 body{
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background: #f4f4f4;
+    margin:0;
+    font-family: Arial, Helvetica, sans-serif;
+    background:#e9e9e9;
+    color:#222;
 }
 
 header{
-    background: #333;
-    color: white;
-    padding: 20px;
-    text-align: center;
+    background:#333;
+    color:white;
+    text-align:center;
+    padding:40px 20px;
+}
+
+header h1{
+    margin:0;
+    font-size:36px;
+}
+
+header p{
+    margin-top:10px;
+    color:#ddd;
 }
 
 main{
-    padding: 20px;
-    background: white;
-    width: 70%;
-    float: left;
-    box-sizing: border-box;
+    max-width:1200px;
+    margin:0 auto;
+    padding:30px 20px;
+    background:white;
+    box-sizing:border-box;
 }
 
-aside{
-    width: 30%;
-    float: left;
-    background: #eaeaea;
-    padding: 20px;
-    box-sizing: border-box;
+.section-title{
+    font-size:30px;
+    margin:0 0 20px;
+}
+
+.posts-section{
+    margin-bottom:40px;
+}
+
+.posts-container{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:20px;
+}
+
+.post-card{
+    background:#f8f8f8;
+    border:1px solid #ddd;
+    border-radius:10px;
+    padding:20px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.08);
+}
+
+.post-card h3{
+    margin-top:0;
+    margin-bottom:12px;
+}
+
+.post-card p{
+    margin:0;
+    line-height:1.6;
+}
+
+.features-section{
+    margin-top:40px;
+}
+
+.features-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.feature-card{
+    background:#f7f7f7;
+    border:1px solid #ddd;
+    border-radius:10px;
+    padding:20px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.08);
+    transition:0.2s;
+}
+
+.feature-card:hover{
+    transform:translateY(-3px);
+}
+
+.feature-card h3{
+    margin-top:0;
+    margin-bottom:10px;
+}
+
+.feature-card p{
+    margin:0;
+    line-height:1.6;
 }
 
 footer{
-    background: #222;
-    color: white;
-    text-align: center;
-    padding: 20px;
-    clear: both;
+    background:#222;
+    color:white;
+    text-align:center;
+    padding:25px;
+    margin-top:40px;
+}
+
+.services-section{
+margin-top:40px;
+}
+
+.services-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+}
+
+.service-card{
+background:#f9f9f9;
+border:1px solid #ddd;
+border-radius:10px;
+padding:20px;
+box-shadow:0 2px 8px rgba(0,0,0,0.08);
+}
+
+.service-card h3{
+margin-top:0;
+margin-bottom:10px;
+}
+
+.service-card p{
+margin:0;
+line-height:1.6;
 }
 ```
 
 В данном коде:
 
-* для элемента `body` задаются шрифт, отступы и цвет фона страницы;
-* для `header` задаются цвет фона, цвет текста, внутренние отступы и выравнивание по центру;
-* для `main` задаются отступы, белый фон и ширина основного содержимого;
-* для `aside` задаются ширина, фон и отступы боковой панели;
-* для `footer` задаются цвет фона, цвет текста, внутренние отступы и очистка обтекания.
+* для элемента `body` задаются шрифт, цвет текста, отсутствие внешних отступов и светлый фон страницы;
+* для `header` задаются тёмный цвет фона, белый цвет текста, внутренние отступы и выравнивание содержимого по центру;
+* для `main` задаются максимальная ширина основного блока, автоматическое выравнивание по центру страницы, белый фон и внутренние отступы;
+* для `.section-title` задаётся размер шрифта и внешний отступ снизу для заголовков секций;
+* для `.posts-container` используется сетка `grid`, позволяющая располагать блоки записей вертикально с одинаковыми промежутками;
+* для `.post-card` задаются светлый фон, рамка, скругление углов, внутренние отступы и тень, благодаря чему записи отображаются в виде отдельных карточек;
+* для `.features-grid` используется сетка из трёх колонок для вывода карточек возможностей темы;
+* для `.feature-card` задаются светлый фон, рамка, скругление углов, внутренние отступы, тень и эффект небольшого смещения при наведении;
+* для `.services-grid` также используется сетка из трёх колонок для отображения карточек услуг;
+* для `.service-card` задаются фон, рамка, скругление углов, внутренние отступы и тень;
+* для `footer` задаются тёмный фон, белый цвет текста, внутренние отступы, выравнивание текста по центру и внешний отступ сверху.
 
-Таким образом создаётся простое визуальное разделение основных частей сайта.
+Таким образом создаётся более аккуратное визуальное оформление темы, в котором записи, возможности темы и услуги отображаются в виде отдельных блоков, а основные части страницы логически разделяются и удобно воспринимаются пользователем.
 
 ### Шаг 7. Скриншот темы
 
@@ -691,11 +792,11 @@ Appearance → Themes
 
 После активации `WordPress` начинает использовать шаблоны данной темы для отображения сайта.
 
-![image](https://i.imgur.com/KoFmBWi.png)
+![image](https://i.imgur.com/7vgMm1I.png)
 
 Далее необходимо открыть главную страницу сайта и убедиться, что сайт отображается с использованием созданной темы.
 
-![image](https://i.imgur.com/YuRR5bW.png)
+![image](https://i.imgur.com/rC3EWWq.png)
 
 ## Контрольные вопросы
 
