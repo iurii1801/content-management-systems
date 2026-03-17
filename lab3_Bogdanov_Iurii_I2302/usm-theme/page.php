@@ -1,22 +1,32 @@
 <?php get_header(); ?>
 
-<h2>Страница</h2>
+<section class="content-page">
+    <div class="content-main">
+        <h2 class="section-title">Страница</h2>
 
-<?php
-if (have_posts()) :
-    while (have_posts()) : the_post();
-?>
+        <?php
+        if (have_posts()) :
+            while (have_posts()) : the_post();
+        ?>
 
-    <h3><?php the_title(); ?></h3>
-    <p><?php the_content(); ?></p>
+        <article class="content-card">
+            <h3><?php the_title(); ?></h3>
+            <div class="content-text">
+                <?php the_content(); ?>
+            </div>
+        </article>
 
-    <?php get_sidebar(); ?>
+        <?php comments_template(); ?>
 
-    <?php comments_template(); ?>
+        <?php
+            endwhile;
+        endif;
+        ?>
+    </div>
 
-<?php
-    endwhile;
-endif;
-?>
+    <div class="content-side">
+        <?php get_sidebar(); ?>
+    </div>
+</section>
 
 <?php get_footer(); ?>

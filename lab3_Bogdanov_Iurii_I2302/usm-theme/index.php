@@ -15,7 +15,7 @@ if ($count == 5) break;
 ?>
 
 <div class="post-card">
-<h3><?php the_title(); ?></h3>
+<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 <p><?php the_excerpt(); ?></p>
 </div>
 

@@ -1,8 +1,8 @@
-<aside>
-    <h3>Боковая панель</h3>
+<aside class="sidebar-box">
+    <h3>Навигация</h3>
     <ul>
-        <li>Главная страница</li>
-        <li>Страницы сайта</li>
-        <li>Записи блога</li>
+        <li><a href="<?php echo home_url(); ?>">Главная страница</a></li>
+        <li><a href="<?php echo home_url('/?page_id=2'); ?>">Страницы сайта</a></li>
+        <li><a href="<?php echo home_url(); ?>">Записи блога</a></li>
     </ul>
 </aside>
